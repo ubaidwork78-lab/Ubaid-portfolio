@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ubaid Sohail | Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px 20px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    h2 {
+      font-weight: 400;
+      margin-top: 10px;
+      color: #aaa;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .card {
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #000;
+    }
+    .card h3 {
+      margin-top: 0;
+    }
+    .btn {
+      margin-top: 15px;
+      background: #444;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    .btn:hover {
+      background: #666;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      overflow: auto;
+    }
+    .modal-content {
+      background-color: #222;
+      margin: 10% auto;
+      padding: 30px;
+      border-radius: 10px;
+      width: 90%; max-width: 600px;
+    }
+    .close {
+      float: right;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: #1a1a1a;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      background: #333;
+      border: none;
+      color: white;
+      border-radius: 6px;
+    }
+    input[type=submit] {
+      background: #555;
+      cursor: pointer;
+    }
+    input[type=submit]:hover {
+      background: #777;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ubaid Sohail</h1>
+    <h2>VICIdial Admin | Virtual Assistant | IT Desk Support | BPO Expert</h2>
+  </header>
+
+  <section class="cards">
+    <div class="card">
+      <h3>VICIdial Admin & Dialer Management</h3>
+      <button class="btn" onclick="openModal('modal1')">Details</button>
+    </div>
+    <div class="card">
+      <h3>Virtual Assistance</h>
+      <button class="btn" onclick="openModal('modal2')">Details</button>
+    </div>
+    <div class="card">
+      <h3>IT Desk Support</h3>
+      <button class="btn" onclick="openModal('modal3')">Details</button>
+    </div>
+    <div class="card">
+      <h3>BPO & Call Center Experience</h3>
+      <button class="btn" onclick="openModal('modal4')">Details</button>
+    </div>
+    <div class="card">
+      <h3>Multi-role Expertise</h3>
+      <button class="btn" onclick="openModal('modal5')">Details</button>
+    </div>
+  </section>
+
+  <!-- Modals -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
+      <h3>VICIdial Admin & Dialer Management</h3>
+      <p>I specialize in setting up and managing VICIdial for high-performing outbound and inbound call campaigns. Configure dial plans, manage users, setup dispositions, and monitor reports in real-time. I keep your dialer efficient and reliable.</p>
+    </div>
+  </div>
+
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal2')">&times;</span>
+      <h3>Virtual Assistance</h3>
+      <p>Offering email handling, scheduling, travel bookings, task tracking, and more. I help manage your day-to-day while you focus on growth. Fast, flexible, and timezone-adaptable.</p>
+    </div>
+  </div>
+
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal3')">&times;</span>
+      <h3>IT Desk Support</h3>
+      <p>Experienced in solving technical issues for teams: Windows support, printer config, VPN setup, remote access, software installs. I keep systems stable and users supported.</p>
+    </div>
+  </div>
+
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal4')">&times;</span>
+      <h3>BPO & Call Center Experience</h3>
+      <p>Handled inbound/outbound support for global clients. Skilled in cold calling, retention, customer service, and voice/chat support. I deliver results with clarity and confidence.</p>
+    </div>
+  </div>
+
+  <div id="modal5" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal5')">&times;</span>
+      <h3>Multi-role Expertise</h3>
+      <p>From dialer management to IT and client coordination — I adapt, learn fast, and deliver with precision. A reliable all-rounder for any remote team.</p>
+    </div>
+  </div>
+
+  <!-- Contact Form -->
+  <footer>
+    <h3>Contact Me</h3>
+    <form action="https://formspree.io/f/mnqklzqg" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <input type="submit" value="Send Message" />
+    </form>
+  </footer>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "block";
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    };
+  </script>
+</body>
+</html>
